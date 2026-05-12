@@ -1,0 +1,39 @@
+#pour les test
+
+
+  #Pour la production
+  spring:
+    application:
+      name: DeptManager
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: ${JDBC_DATASOURCE_URL}
+      username: ${JDBC_DATASOURCE_USERNAME}
+      password: ${JDBC_DATASOURCE_PASSWORD}
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      database-platform: org.hibernate.dialect.MySQLDialect
+    servlet:
+      multipart:
+        max-file-size: 500MB
+        max-request-size: 500MB
+    mail:
+      host: ${MAIL_HOST}
+      port: ${MAIL_PORT}
+      username: ${MAIL_USERNAME}
+      password: ${MAIL_PASSWORD}
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
+              required: true
+            connectiontimeout: 5000
+            timeout: 5000
+  cloudinary:
+    cloud-name: ${CLOUDINARY_NAME}
+    api-key: ${CLOUDINARY_API_KEY}
+    api-secret: ${CLOUDINARY_API_SECRET}

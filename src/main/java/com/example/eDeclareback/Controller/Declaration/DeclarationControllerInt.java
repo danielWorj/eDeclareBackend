@@ -18,6 +18,9 @@ public interface DeclarationControllerInt {
     @GetMapping("/all")
     ResponseEntity<List<Declaration>> findDeclaration();
 
+    @GetMapping("/all/byparent/{id}")
+    ResponseEntity<List<Declaration>> findDeclarationByParent(@PathVariable Integer id);
+
     @GetMapping("/all/byhopital/{id}")
     ResponseEntity<List<Declaration>> findDeclarationByHopital(@PathVariable Integer id);
 

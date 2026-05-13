@@ -7,13 +7,13 @@ import lombok.Data;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "mairie")          // ← ajouté
 @Data
-@DiscriminatorValue(value = "mairie")
-
+@DiscriminatorValue("MAIRIE")    // ← majuscules comme en base
+@PrimaryKeyJoinColumn(name = "id") // ← ajouté
 public class Mairie extends Structure {
 
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "mairie") // ← mappedBy ajouté
     private List<Hopital> hopitaux;
 }

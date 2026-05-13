@@ -5,13 +5,14 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table
+@Table(name = "hopital")
 @Data
-@DiscriminatorValue(value = "mairie")
-
+@DiscriminatorValue("HOPITAL") // ← corrigé (était "mairie")
+@PrimaryKeyJoinColumn(name = "id") // ← ajouté
 public class Hopital extends Structure {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    private Mairie mairie ;
+    @JoinColumn(name = "mairie_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "hopitaux"})
+    private Mairie mairie;
 }

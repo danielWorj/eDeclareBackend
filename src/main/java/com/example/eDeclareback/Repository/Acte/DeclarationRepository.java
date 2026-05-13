@@ -11,5 +11,5 @@ import java.util.List;
 public interface DeclarationRepository extends JpaRepository<Declaration,Integer> {
     List<Declaration> findByHopital(Hopital hopital);
     List<Declaration> findByMairie(Mairie mairie);
-    List<Declaration> findByParent(Parent parent);
+    List<Declaration> findByMere(Parent mere);
 }

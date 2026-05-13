@@ -76,7 +76,7 @@ public class DeclarationControllerImpl implements DeclarationControllerInt {
     @Override
     public ResponseEntity<List<Declaration>> findDeclarationByParent(Integer id) {
         return ResponseEntity.ok(
-                this.declarationRepository.findByParent(
+                this.declarationRepository.findByMere(
                         this.parentRepository.findById(id).orElse(null)
                 )
         );

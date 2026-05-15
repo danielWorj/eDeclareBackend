@@ -12,4 +12,8 @@ public class ServerReponse {
         this.message = message;
         this.status = status;
     }
+    public ServerReponse(Boolean status , String message) {
+        this.message = message;
+        this.status = status;
+    }
 }

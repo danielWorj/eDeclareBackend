@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin("*")
 public interface AuthControllerInt {
     @GetMapping("/ping")
-    ResponseEntity<String> ping();
+    ResponseEntity<ServerReponse> ping();
     @PostMapping("/create")
     ResponseEntity<ServerReponse> createUser(@RequestParam("user") String user);
     @PostMapping("/login")

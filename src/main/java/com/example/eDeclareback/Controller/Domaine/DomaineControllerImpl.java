@@ -121,6 +121,7 @@ public class DomaineControllerImpl implements DomaineControllerInt {
 
     @Override
     public ResponseEntity<Hopital> findHopitalById(Integer id) {
+        System.out.println("Hopital:"+this.hopitalRepository.findById(id).orElse(null));
         return ResponseEntity.ok(this.hopitalRepository.findById(id).orElse(null));
     }
 

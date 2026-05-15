@@ -30,8 +30,8 @@ public class AuthControllerImpl implements AuthControllerInt {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
-    public ResponseEntity<String> ping() {
-        return ResponseEntity.ok("pong");
+    public ResponseEntity<ServerReponse> ping() {
+        return ResponseEntity.ok(new ServerReponse("pong",true));
     }
 
     @Override
